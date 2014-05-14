@@ -26,8 +26,13 @@ def muller(ecuacion, x0,x1,x2,tol,N,lista):
     lista.append('s1 = (f(x1)-f(x0))/h1; s1 = ' + str(s1))
     s2 = (f(x2)-f(x1))/h2
     lista.append('s2 = (f(x2)-f(x1))/h2; s2 = ' + str(s2))
-    d = (s2 - s1)/(h2 - h1)
-    lista.append('d = (s2 - s1)/(h2 - h1); d = ' + str(d))
+    
+    #d = (s2 - s1)/(h2 - h1)
+    #lista.append('d = (s2 - s1)/(h2 - h1); d = ' + str(d))
+    #Signo equivocado
+    
+    d = (s2 - s1)/(h2 + h1)
+    lista.append('d = (s2 - s1)/(h2 + h1); d = ' + str(d))
     i = 3
     lista.append('i = 3')
     
@@ -69,8 +74,12 @@ def muller(ecuacion, x0,x1,x2,tol,N,lista):
         lista.append('s1 = (f(x1)-f(x0))/h1; s1 = ' + str(s1))
         s2 = (f(x2)-f(x1))/h2
         lista.append('s2 = (f(x2)-f(x1))/h2; s2 = ' + str(s2))
-        d = (s2 - s1)/(h2 - h1)
-        lista.append('d = (s2 - s1)/(h2 - h1); d = ' + str(d))
+        #d = (s2 - s1)/(h2 - h1)
+        #lista.append('d = (s2 - s1)/(h2 - h1); d = ' + str(d))
+        #Signo equivocado
+    
+        d = (s2 - s1)/(h2 + h1)
+        lista.append('d = (s2 - s1)/(h2 + h1); d = ' + str(d))
         i += 1
         lista.append('Incrementar i; i = ' + str(i))
     lista.append('El algoritmo fallo luego de ' + str(N) + ' iteraciones.')
